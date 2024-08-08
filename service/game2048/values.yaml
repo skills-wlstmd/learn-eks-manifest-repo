@@ -61,8 +61,17 @@ autoscaling:
   enabled: true
   minReplicas: 2
   maxReplicas: 4
-  targetCPUUtilizationPercentage: 20
-  # targetMemoryUtilizationPercentage: 80
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetType: Utilization
+        targetAverageUtilization: 50
+    - type: Resource
+      resource:
+        name: memory
+        targetType: Utilization
+        targetAverageUtilization: 80
 
 nodeSelector:
   nodeType: service-2024
