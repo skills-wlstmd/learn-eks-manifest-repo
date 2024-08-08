@@ -5,7 +5,7 @@ metadata:
   name: game2048
 spec:
   revisionHistoryLimit: 5
-  replicas: 3
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
