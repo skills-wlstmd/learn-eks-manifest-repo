@@ -6,7 +6,7 @@ appName: "game2048"
 replicaCount: 2
 
 image:
-  repository: ${{ secrets.AWSID }}.dkr.ecr.ap-northeast-2.amazonaws.com/eks-demo-app
+  repository: 362708816803.dkr.ecr.ap-northeast-2.amazonaws.com/eks-demo-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
