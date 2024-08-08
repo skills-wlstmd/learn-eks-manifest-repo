@@ -21,12 +21,18 @@ spec:
     spec:
       containers:
         - name: game2048
-          image: "${{ secrets.AWSID }}.dkr.ecr.ap-northeast-2.amazonaws.com/eks-demo-app:latest"
+          image: "${AWSID}.dkr.ecr.ap-northeast-2.amazonaws.com/eks-demo-app:latest"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 8080
               protocol: TCP
+          env:
+            - name: AWSID
+              valueFrom:
+                secretKeyRef:
+                  name: aws-secret   # Secret의 이름
+                  key: awsid-key     # Secret에서 사용할 키
       nodeSelector:
         nodeType: service-2024
       tolerations:
