@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: game2048
-          image: "<AWS ACCOUNT ID>.dkr.ecr.ap-northeast-2.amazonaws.com/<ECR repo명>:latest"
+          image: "${{ secrets.AWSID }}.dkr.ecr.ap-northeast-2.amazonaws.com/eks-demo-app:latest"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
