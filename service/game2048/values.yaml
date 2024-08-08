@@ -6,7 +6,7 @@ appName: "game2048"
 replicaCount: 2
 
 image:
-  repository: 362708816803.dkr.ecr.ap-northeast-2.amazonaws.com/eks-demo-app
+  repository: <AWSID>.dkr.ecr.ap-northeast-2.amazonaws.com/eks-demo-app
   pullPolicy: IfNotPresent
   tag: "latest"
 
@@ -31,7 +31,7 @@ ingress:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/healthcheck-path: /
-    alb.ingress.kubernetes.io/subnets: subnet-090b7059b5bddc500, subnet-070483e511063643b
+    alb.ingress.kubernetes.io/subnets: <public-subnetID-1>, <public-subnetID-2>
   ingressRule:
     - http:
         paths:
